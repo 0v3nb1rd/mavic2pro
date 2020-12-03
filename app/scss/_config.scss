@@ -3,7 +3,7 @@
 
 $accent: orange; // Accent Color
 $fontsize: 10px; // Body Font Size
-$textcolor: #fff; // Text Color
+$white: #fff; // Text Color
 $lineheight: 1.55; // Document Line Height
 $userfont: "SFProDisplay", Roboto, sans-serif; // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
@@ -11,6 +11,7 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Fon
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 30px;
 $gutter: $grid-gutter-width;
+$duration: 0.2s;
 
 //------------------------------//
 //-------IMPORT SECTION--------//
@@ -57,7 +58,7 @@ $gutter: $grid-gutter-width;
 
 ::selection {
   background-color: $accent;
-  color: #fff;
+  color: $white;
 }
 
 input,
@@ -71,8 +72,13 @@ textarea {
   }
 }
 html {
+  box-sizing: border-box;
   font-size: 10px;
   scroll-behavior: smooth;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 body {
   position: relative;
@@ -81,8 +87,8 @@ body {
   font-weight: 300;
   // font-size: $fontsize;
   font-size: 1.7rem;
-  line-height: $lineheight;
-  color: $textcolor;
+  // line-height: $lineheight;
+  color: $white;
   overflow-x: hidden;
 }
 ul,
@@ -113,15 +119,31 @@ h6 {
 }
 .page-section {
   position: relative;
-  min-height: 100vh;
-  background-image: url("../img/dest/page-bg.jpg");
+  // height: calc(100vh - 80px);
+  height: 100vh;
+  padding-top: 80px;
+  background-image: url(../img/dest/page-bg.jpg);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  padding: 75px 0 50px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      107.54deg,
+      rgba(23, 26, 28, 0.72) 0%,
+      #5e5e57 100%
+    );
+    opacity: 0.15;
+  }
 }
 .title {
   padding-left: 25px;
+  // padding-top: 200px;
   margin-bottom: 55px;
   font-size: 44px;
   font-weight: 300;
@@ -133,6 +155,33 @@ h6 {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 13px 0 30px;
+  margin: 13px 0 30px;
   text-align: center;
+}
+
+.menu {
+  &__itm {
+    display: inline-block;
+    & + .menu__itm {
+      padding-left: 20px;
+    }
+  }
+}
+.btn {
+  padding: 6px 28px;
+  border: 1px solid $white;
+  border-radius: 3px;
+  text-transform: uppercase;
+  color: $white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all $duration ease-out;
+  &:hover {
+    color: $black;
+    background-color: $white;
+  }
+}
+.tel {
+  font-size: 1.6rem;
+  line-height: 1.15;
 }
