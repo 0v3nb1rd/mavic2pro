@@ -1,0 +1,63 @@
+.about {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+  }
+  &__text {
+    max-width: 440px;
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  &__slider-box {
+    position: relative;
+    padding-top: 110px;
+  }
+  &__slider-text {
+    position: absolute;
+    width: 285px;
+    text-align: right;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    font-weight: 500;
+    bottom: 30px;
+    left: -200px;
+    z-index: 10;
+  }
+  .slider {
+    max-width: 560px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      right: -17px;
+      width: 560px;
+      height: 276px;
+      border: 4px solid $white;
+    }
+    &__btn {
+      position: absolute;
+      right: 0;
+      bottom: -45px;
+      padding: 16px 26px;
+      border: none;
+      background-color: $white;
+      cursor: pointer;
+      z-index: 10;
+      outline: none;
+      &.slick-disabled {
+        background-color: $black;
+        svg {
+          stroke: $white;
+        }
+      }
+      svg {
+        stroke: $black;
+      }
+      &-left {
+        right: 60px;
+      }
+    }
+  }
+}
