@@ -13,4 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     nextArrow:
       '<button class="slider__btn slider__btn-right"><svg width="10" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.782 17L9 9 .782 1" /></svg></button>',
   });
+
+  // accordion menu
+  $(".faq .faq__itm h3").on("click", function () {
+    $(".faq__itm").removeClass("active");
+    $(this).parent().addClass("active");
+  });
 });
