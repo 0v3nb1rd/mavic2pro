@@ -44,7 +44,7 @@
           </nav>
           <div class="header__info">
             <button class="header__btn btn">Купить</button>
-            <a class="header__tel tel" href="#" href="tel=:80501234567"
+            <a class="header__tel tel" href="tel:80501234567"
               >8 (050) 123-45-67</a
             >
           </div>
@@ -321,42 +321,38 @@
           <div class="contacts__inner">
             <div class="contacts__info">
               <div class="contacts__info-box">
-                <p>Киев</p>
-                <a href="tel:0595559900">(059)555-99-00</a>
-                <a href="mailto:dgi.mavic2pro.kiev@mail.ru"
+                <h6 class="city">Киев</h6>
+                <a class="phone" href="tel:+380595559900">+38(059)555-99-00</a>
+                <a class="mail" href="mailto:dgi.mavic2pro.kiev@mail.ru"
                   >dgi.mavic2pro.kiev@mail.ru</a
                 >
               </div>
               <div class="contacts__info-box">
-                <p>Москва</p>
-                <a href="tel:+84995676767">+8(499)567–67–67</a>
-                <a href="mailto:dgi.mavic2pro.kiev@mail.ru"
+                <h6 class="city">Москва</h6>
+                <a class="phone" href="tel:+84995676767">+8(499)567–67–67</a>
+                <a class="mail" href="mailto:dgi.mavic2pro.kiev@mail.ru"
                   >dgi.mavic2pro.kiev@mail.ru</a
                 >
               </div>
               <div class="contacts__info-box">
-                <p>Минск</p>
-                <a href="tel:0595559900">(059)555-99-00</a>
-                <a href="mailto:dgi.mavic2pro.kiev@mail.ru"
+                <h6 class="city">Минск</h6>
+                <a class="phone" href="tel:0595559900">(059)555-99-00</a>
+                <a class="mail" href="mailto:dgi.mavic2pro.kiev@mail.ru"
                   >dgi.mavic2pro.kiev@mail.ru</a
                 >
               </div>
             </div>
 
-            <div class="contacts__form">
-              <form>
-                <h3>Остались вопросы?</h3>
-                <p>
-                  Мы обязательно свяжемся с вами в течение двух рабочих дней
-                </p>
-                <div class="form__wrap">
-                  <input type="text" placeholder="Ваше имя" />
-                  <input type="email" placeholder="Ваше e-mail" />
-                </div>
-                <textarea placeholder="Что вас интересует?"></textarea>
-                <button class="btn" type="submit">ОТПРАВИТЬ</button>
-              </form>
-            </div>
+            <form class="contacts__form form">
+              <h3>Остались вопросы?</h3>
+              <p>Мы обязательно свяжемся с вами в течение двух рабочих дней</p>
+              <div class="form__wrap">
+                <input type="text" placeholder="Ваше имя" />
+                <input type="email" placeholder="Ваше e-mail" />
+              </div>
+              <textarea placeholder="Что вас интересует?"></textarea>
+              <button class="btn" type="submit">ОТПРАВИТЬ</button>
+            </form>
 
             <ul class="contacts__social social">
               <li class="social__itm">
@@ -385,10 +381,12 @@
               </li>
             </ul>
           </div>
-          <footer class="footer">
-            <p class="footer__copy">© DJI, 2020</p>
-          </footer>
         </div>
+        <footer class="footer">
+          <div class="container">
+            <p class="footer__copy">© DJI, 2020</p>
+          </div>
+        </footer>
       </section>
     </main>
     <script src="js/app.min.js"></script>

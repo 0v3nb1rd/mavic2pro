@@ -1,0 +1,12 @@
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 32px;
+  &__copy {
+    text-align: right;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+}
