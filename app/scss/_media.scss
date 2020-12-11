@@ -1,0 +1,45 @@
+@media (max-width: 1100px) {
+  .header {
+    .menu {
+      order: 1;
+    }
+    .menu__list {
+      display: none;
+    }
+    &__btn {
+      margin-right: 0;
+    }
+    &__tel {
+      display: none;
+    }
+  }
+  .burger {
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #e0e0e0;
+      margin-bottom: 4px;
+    }
+    &::after {
+      margin-left: auto;
+      margin-bottom: 0;
+      width: 16px;
+    }
+    &__line {
+      display: block;
+      margin-bottom: 4px;
+      width: 24px;
+      height: 2px;
+      background-color: #e0e0e0;
+    }
+  }
+}
