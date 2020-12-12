@@ -3,6 +3,8 @@ window.jQuery = $;
 window.$ = $; // import module example (npm i -D jquery)
 // require("./other_script.js"); // Require Other Script(s) from app/js folder Example
 import slick from "slick-carousel";
+import easings from "fullpage.js/vendors/easings.min";
+import scrolloverflow from "fullpage.js/vendors/scrolloverflow.min";
 import fullpage from "fullpage.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,16 +18,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   new fullpage("#fullpage", {
-    sectionSelector: ".page-section",
-
-    // licenseKey: "hello",
-    // autoScrolling: true,
-    // asrollHorizontally: true,
+    sectionSelector: ".section",
+    //   // licenseKey: "hello",
+    lockAnchors: false,
+    autoScrolling: true,
+    asrollHorizontally: true,
+    // css3: true,
+    menu: "#header__nav",
+    scrollOverflow: true,
+    anchors: ["home", "about", "features", "specific", "faq", "contacts"],
   });
 
   // accordion menu
-  $(".faq .faq__itm h3").on("click", function () {
+  $(".faq .faq__itm h3").on("click", () => {
     $(".faq__itm").removeClass("active");
     $(this).parent().addClass("active");
+  });
+
+  $(".burger").on("click", () => {
+    $(".burger").toggleClass("burger--active");
+    $(".menu__list").toggleClass("menu__list--active");
+  });
+  $(".menu__itm").on("click", () => {
+    $(".burger").removeClass("burger--active");
+    $(".menu__list").removeClass("menu__list--active");
   });
 });
