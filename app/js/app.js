@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // accordion menu
-  $(".faq .faq__itm h3").on("click", () => {
+  $(".faq .faq__itm h3").on("click", (e) => {
     $(".faq__itm").removeClass("active");
-    $(this).parent().addClass("active");
+    $(e.target).parent().addClass("active");
   });
 
   $(".burger").on("click", () => {
