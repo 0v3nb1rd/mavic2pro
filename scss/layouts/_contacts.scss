@@ -1,0 +1,81 @@
+.contacts {
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+  }
+  &__info {
+    width: 240px;
+    margin-right: 50px;
+  }
+  &__info-box {
+    margin-bottom: 30px;
+    .city {
+      font-weight: 700;
+      font-size: 2.1rem;
+      line-height: 1.1;
+      margin-bottom: 13px;
+    }
+    .mail,
+    .phone {
+      font-size: 1.5rem;
+      line-height: 1;
+      &:hover {
+        // text-decoration: underline;
+        color: $white;
+      }
+    }
+  }
+  .form {
+    width: 570px;
+    h3 {
+      font-size: 2.1rem;
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      font-weight: 300;
+    }
+    &__wrap {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      input {
+        width: 49%;
+        padding: 15px;
+        font-size: 1.3rem;
+        line-height: 1.2;
+        color: inherit;
+        border: none;
+        background-color: rgba($black, 0.5);
+        &:focus-visible {
+          background-color: rgba($black, 0.8);
+        }
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 145px;
+      padding: 15px;
+      font-size: 1.3rem;
+      line-height: 1.2;
+      resize: none;
+      border: none;
+      color: inherit;
+      background-color: rgba($black, 0.5);
+      margin-bottom: 20px;
+      &:focus-visible {
+        background-color: rgba($black, 0.8);
+      }
+    }
+  }
+  &__social {
+    margin-left: 106px;
+    li + .social__itm {
+      margin-top: 28px;
+    }
+  }
+}

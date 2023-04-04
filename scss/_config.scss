@@ -1,0 +1,200 @@
+//----------------------------------//
+//------USER VARIABLES SECTION-----//
+
+$accent: orange; // Accent Color
+$fontsize: 10px; // Body Font Size
+$white: #fff; // Text Color
+$lineheight: 1.55; // Document Line Height
+$userfont: "SFProDisplay", Roboto, sans-serif; // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px;
+$gutter: $grid-gutter-width;
+$duration: 0.2s;
+
+//------------------------------//
+//-------IMPORT SECTION--------//
+
+@import "node_modules/bootstrap/scss/bootstrap-reboot.scss"; // Bootstrap Reboot collection
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss"; // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
+
+//------------------------------//
+//------FONTS LOAD SECTION-----//
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: local($fname), url($furl) format("woff2");
+    font-display: swap; // Uncomment to initially display system fonts
+  }
+}
+
+@include font("SFProDisplay", normal, 300, "../fonts/SFProDisplay-Light.woff2");
+@include font(
+  "SFProDisplay",
+  normal,
+  400,
+  "../fonts/SFProDisplay-Regular.woff2"
+);
+@include font(
+  "SFProDisplay",
+  normal,
+  500,
+  "../fonts/SFProDisplay-Semibold.woff2"
+);
+@include font("SFProDisplay", normal, 600, "../fonts/SFProDisplay-Bold.woff2");
+
+//-------------------------------//
+//--------GENERAL STYLES--------//
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $white;
+  color: $black;
+}
+
+input,
+textarea {
+  outline: none;
+  &:focus:required:invalid {
+    border-color: red;
+  }
+  &:required:valid {
+    border-color: green;
+  }
+}
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  position: relative;
+  min-width: 320px;
+  font-family: $userfont;
+  font-weight: 300;
+  // font-size: $fontsize;
+  font-size: 1.7rem;
+  // line-height: $lineheight;
+  color: $white;
+  overflow-x: hidden;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+}
+
+.container {
+  max-width: 1270px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.page-section {
+  position: relative;
+  // height: calc(100vh - 80px);
+  height: 100vh;
+  padding-top: 80px;
+  background-image: url(../img/dest/page-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      107.54deg,
+      rgba(23, 26, 28, 0.72) 0%,
+      #5e5e57 100%
+    );
+    opacity: 0.15;
+  }
+  .container {
+    position: relative;
+  }
+}
+.title {
+  padding-left: 25px;
+  padding-top: 200px;
+  margin-bottom: 55px;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 53px;
+}
+
+.page-arrow {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 13px 0 30px;
+  text-align: center;
+}
+
+.menu {
+  &__itm {
+    display: inline-block;
+    & + .menu__itm {
+      padding-left: 20px;
+    }
+  }
+  &__tel {
+    display: none;
+  }
+}
+.burger {
+  display: none;
+}
+.btn {
+  padding: 6px 28px;
+  border: 1px solid $white;
+  border-radius: 3px;
+  text-transform: uppercase;
+  color: $white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all $duration ease-out;
+  &:hover {
+    color: $black;
+    background-color: $white;
+  }
+}
+.tel {
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+button:focus {
+  outline: none;
+}
