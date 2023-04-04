@@ -1,4 +1,4 @@
-# Mega Exstaz
+# Mavic 2 Pro
 Landing page (for education)</br>
 This website has been developed using  html, scss, and jquery.
 ### Desktop View
